@@ -1,82 +1,85 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#10111a">
-<title>MyTools — By Rapzz</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PengingatKu</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="glow g1"></div><div class="glow g2"></div>
+  <div class="app">
 
-<header>
-  <div class="brand">⚡ MyTools</div>
-  <button id="theme" class="iconbtn">🌙</button>
-</header>
+    <header>
+      <div>
+        <h1>PengingatKu</h1>
+        <p>Jam & pengingat pribadi</p>
+      </div>
 
-<main>
-  <section class="hero">
-    <div>
-      <span class="pill">ALL TOOLS • REMINDER</span>
-      <h1>Atur semuanya.<br><span>Jangan lupa apa pun.</span></h1>
-      <p>Pengingat, playlist, dan tools dalam satu web.</p>
-      <button id="notify" class="primary">🔔 Aktifkan Notifikasi</button>
-    </div>
-    <div class="gift">
-      <div class="giftbox">🎁</div>
-      <span>✦</span><span>✧</span><span>✦</span>
-    </div>
-  </section>
+      <button id="themeBtn">🌙</button>
+    </header>
 
-  <section class="panel music">
-    <div class="music-info">
-      <b>🎵 Playlist</b>
-      <small id="song">Belum ada lagu</small>
-    </div>
-    <div class="controls">
-      <button id="prev">⏮</button><button id="play" class="play">▶</button><button id="next">⏭</button>
-    </div>
-    <label class="upload">＋ Lagu <input id="musicFiles" type="file" accept="audio/*" multiple hidden></label>
-    <input id="volume" type="range" min="0" max="1" value=".6" step=".01">
-  </section>
+    <main>
 
-  <section class="panel add">
-    <div class="section-title">
-      <div><h2>⏰ Pengingat</h2><small>Pengingat tersimpan di perangkat ini.</small></div>
-    </div>
-    <div class="form">
-      <input id="title" placeholder="Contoh: Belajar, minum, live..." maxlength="60">
-      <input id="date" type="date">
-      <input id="time" type="time">
-      <select id="repeat">
-        <option value="once">Sekali</option>
-        <option value="daily">Setiap hari</option>
-      </select>
-      <button id="add" class="primary">＋ Tambah</button>
-    </div>
-  </section>
+      <section class="clock-card">
+        <div id="clock">00:00:00</div>
+        <div id="date">Memuat tanggal...</div>
+      </section>
 
-  <section>
-    <div class="section-title">
-      <div><h2>📋 Daftar Pengingat</h2><small id="count">0 pengingat</small></div>
-      <button id="clear" class="danger">Hapus selesai</button>
-    </div>
-    <div id="list" class="reminders"></div>
-  </section>
+      <section class="reminder-card">
+        <h2>🔔 Tambah Pengingat</h2>
 
-  <section class="tools-section">
-    <div class="section-title"><div><h2>🧰 Tools</h2><small>Bagian ini bisa kita isi tools lain nanti.</small></div></div>
-    <div class="toolgrid">
-      <div class="tool">🧮<b>Calculator</b><small>Hitung cepat</small></div>
-      <div class="tool">📝<b>Text Counter</b><small>Hitung kata & karakter</small></div>
-      <div class="tool">🔐<b>Password Generator</b><small>Buat password acak</small></div>
-      <div class="tool">🔗<b>QR Generator</b><small>Buat QR code</small></div>
-    </div>
-  </section>
-</main>
+        <input
+          type="text"
+          id="reminderText"
+          placeholder="Contoh: Belajar, makan, tidur..."
+        >
 
-<audio id="audio"></audio>
-<script src="script.js"></script>
+        <div class="form-row">
+          <input type="date" id="reminderDate">
+          <input type="time" id="reminderTime">
+        </div>
+
+        <button class="add-btn" id="addReminder">
+          + Tambah Pengingat
+        </button>
+      </section>
+
+      <section class="list-card">
+        <div class="section-title">
+          <h2>📋 Pengingat Saya</h2>
+          <span id="count">0</span>
+        </div>
+
+        <div id="reminderList">
+          <p class="empty">Belum ada pengingat.</p>
+        </div>
+      </section>
+
+      <section class="gift-card">
+        <div class="gift">🎁</div>
+        <h2>Hadiah kecil buat kamu</h2>
+        <p>Klik hadiahnya 👀</p>
+        <button id="giftBtn">Buka Gift</button>
+      </section>
+
+    </main>
+
+    <footer>
+      PengingatKu • Versi 1.0
+    </footer>
+
+  </div>
+
+  <div class="popup hidden" id="popup">
+    <div class="popup-box">
+      <div class="popup-icon">🎉</div>
+      <h2 id="popupTitle">Pengingat!</h2>
+      <p id="popupMessage"></p>
+      <button id="closePopup">Oke</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
